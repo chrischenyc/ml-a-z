@@ -8,7 +8,7 @@ import numpy as np
 
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 # import csv to pandas dataframe
 dataset = pd.read_csv("./data/3/Data.csv")
@@ -17,9 +17,10 @@ dataset = pd.read_csv("./data/3/Data.csv")
 features = dataset.iloc[:, :-1].values
 labels = dataset.iloc[:, -1].values
 
-print("----------------------features before imputation------------------")
+print("----------------------features before preprocessing------------------")
 print(features)
-
+print("----------------------labels before preprocessing------------------")
+print(labels)
 
 # imputer is used to impute missing values
 imputer = SimpleImputer(missing_values=np.nan, strategy="mean")
@@ -40,3 +41,11 @@ features = np.array(ct.fit_transform(features))
 
 print("-----------------features after one hot encoding------------------")
 print(features)
+
+
+# encoding labels
+le = LabelEncoder()
+labels = le.fit_transform(labels)
+
+print("-----------------labels after encoding------------------")
+print(labels)
