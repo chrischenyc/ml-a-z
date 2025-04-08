@@ -16,6 +16,9 @@ class PythonFileHandler(FileSystemEventHandler):
 
             # Check if enough time has passed since last run
             if file_path not in self.last_modified or current_time - self.last_modified[file_path] > self.cooldown:
+                # Clear console before running
+                os.system('cls' if os.name == 'nt' else 'clear')
+
                 print(f"\n🔄 Changes detected in {os.path.basename(file_path)}")
                 print("Running Python script...")
                 try:
