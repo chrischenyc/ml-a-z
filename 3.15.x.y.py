@@ -3,7 +3,6 @@
 # pandas is used for data manipulation and analysis
 import pandas as pd
 
-
 # import csv to pandas dataframe
 dataset = pd.read_csv("./data/3/Data.csv")
 

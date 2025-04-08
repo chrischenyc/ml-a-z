@@ -1,7 +1,7 @@
 # Importing the necessary libraries
-from sklearn.impute import SimpleImputer
-import pandas as pd
 import numpy as np
+import pandas as pd
+from sklearn.impute import SimpleImputer
 
 # Load the dataset
 dataset = pd.read_csv("./data/pima-indians-diabetes.csv.csv")
@@ -27,9 +27,13 @@ imputer.fit(dataset.iloc[:, :-1])
 features = imputer.transform(dataset.iloc[:, :-1])
 labels = dataset.iloc[:, -1]
 
-#Print your updated matrix of features
-print("--------------------------------updated matrix of features----------------------------")
+# Print your updated matrix of features
+print(
+    "--------------------------------updated matrix of features----------------------------"
+)
 print(features)
 
-print("--------------------------------updated matrix of labels----------------------------")
+print(
+    "--------------------------------updated matrix of labels----------------------------"
+)
 print(labels)

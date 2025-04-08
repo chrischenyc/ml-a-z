@@ -1,14 +1,12 @@
 # 3.19 - transform categorical columns
 
 # pandas is used for data manipulation and analysis
-import pandas as pd
-
 # numpy is used for numerical operations
 import numpy as np
-
-from sklearn.impute import SimpleImputer
+import pandas as pd
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 # import csv to pandas dataframe
 dataset = pd.read_csv("./data/3/Data.csv")
@@ -36,7 +34,9 @@ print(features)
 
 
 # encoding categorical data
-ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
+ct = ColumnTransformer(
+    transformers=[("encoder", OneHotEncoder(), [0])], remainder="passthrough"
+)
 features = np.array(ct.fit_transform(features))
 
 print("-----------------features after one hot encoding------------------")
