@@ -4,14 +4,14 @@
 import pandas as pd
 
 # import csv to pandas dataframe
-dataset = pd.read_csv("./data/3/Data.csv")
+dataset = pd.read_csv("./data/Data.csv")
 
 
 features = dataset.iloc[:, :-1].values
 labels = dataset.iloc[:, -1].values
 
-print("--------------------------------features----------------------------")
+print(" features ")
 print(features)
 
-print("--------------------------------labels----------------------------")
+print(" labels ")
 print(labels)

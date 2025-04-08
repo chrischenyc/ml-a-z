@@ -9,15 +9,13 @@ import pandas as pd
 from sklearn.impute import SimpleImputer
 
 # import csv to pandas dataframe
-dataset = pd.read_csv("./data/3/Data.csv")
+dataset = pd.read_csv("./data/Data.csv")
 
 
 features = dataset.iloc[:, :-1].values
 labels = dataset.iloc[:, -1].values
 
-print(
-    "--------------------------------features before imputation----------------------------"
-)
+print(" features before imputation ")
 print(features)
 
 
@@ -30,7 +28,5 @@ imputer.fit(features[:, 1:3])
 # transform features with numeric values
 features[:, 1:3] = imputer.transform(features[:, 1:3])
 
-print(
-    "--------------------------------features after imputation----------------------------"
-)
+print(" features after imputation ")
 print(features)

@@ -1,17 +1,27 @@
 import os
 import subprocess
+import sys
 import time
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 
+def get_src_directory():
+    """Get the source directory from command line arguments or use default."""
+    return sys.argv[1] if len(sys.argv) > 1 else "./src"
+
+
 class PythonFileHandler(FileSystemEventHandler):
+    """Handler for Python file modifications."""
+
     def __init__(self):
+        """Initialize the handler with a cooldown period."""
         self.last_modified = {}  # Keep track of last modified time for each file
         self.cooldown = 1  # seconds to wait between runs
 
     def on_modified(self, event):
+        """Handle the event when a Python file is modified."""
         if event.src_path.endswith(".py"):
             current_time = time.time()
             file_path = event.src_path
@@ -35,12 +45,16 @@ class PythonFileHandler(FileSystemEventHandler):
 
 
 def watch_directory():
+    """Watch the specified directory and its subdirectories for changes in Python files."""
+    src_directory = get_src_directory()
     event_handler = PythonFileHandler()
     observer = Observer()
-    observer.schedule(event_handler, path=".", recursive=False)
+    observer.schedule(event_handler, path=src_directory, recursive=True)
     observer.start()
 
-    print("👀 Watching for changes in Python files")
+    print(
+        f"👀 Watching for changes in Python files in {src_directory} and its subdirectories"
+    )
     print("Press Ctrl+C to stop watching")
 
     try:
