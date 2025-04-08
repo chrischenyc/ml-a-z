@@ -51,54 +51,16 @@ ct = ColumnTransformer(
 )
 X = np.array(ct.fit_transform(X_raw))
 
+# Get feature names automatically
+feature_names = ct.get_feature_names_out()
+
 # Label encoding
 le = LabelEncoder()
 y = le.fit_transform(y_raw)
 
 # output the processed features and labels to a csv file
-df_processed = pd.DataFrame(X)
-df_processed.columns = [
-    "Pclass-v1",
-    "Pclass-v2",
-    "Pclass-v3",
-    "Sex-v1",
-    "Sex-v2",
-    "Embarked-v1",
-    "Embarked-v2",
-    "Embarked-v3",
-    "PassengerId",
-    "Name",
-    "Age",
-    "SibSp",
-    "Parch",
-    "Ticket",
-    "Fare",
-    "Cabin",
-]
+df_processed = pd.DataFrame(X, columns=feature_names)
 df_processed["Survived"] = y
-
-# rearrange columns to match the original order
-df_processed = df_processed[
-    [
-        "PassengerId",
-        "Pclass-v1",
-        "Pclass-v2",
-        "Pclass-v3",
-        "Name",
-        "Sex-v1",
-        "Sex-v2",
-        "Age",
-        "SibSp",
-        "Parch",
-        "Ticket",
-        "Fare",
-        "Cabin",
-        "Embarked-v1",
-        "Embarked-v2",
-        "Embarked-v3",
-        "Survived",
-    ]
-]
 
 # save the processed data to a csv file
 df_processed.to_csv("./data/titanic_processed.csv", index=False)
