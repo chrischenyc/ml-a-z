@@ -76,4 +76,29 @@ df_processed.columns = [
     "Cabin",
 ]
 df_processed["Survived"] = y
+
+# rearrange columns to match the original order
+df_processed = df_processed[
+    [
+        "PassengerId",
+        "Pclass-v1",
+        "Pclass-v2",
+        "Pclass-v3",
+        "Name",
+        "Sex-v1",
+        "Sex-v2",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Ticket",
+        "Fare",
+        "Cabin",
+        "Embarked-v1",
+        "Embarked-v2",
+        "Embarked-v3",
+        "Survived",
+    ]
+]
+
+# save the processed data to a csv file
 df_processed.to_csv("./data/titanic_processed.csv", index=False)
