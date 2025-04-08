@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 # initialize colorama
 init()
 
-df = pd.read_csv("./data/titanic.csv")
+df: pd.DataFrame = pd.read_csv("./data/titanic.csv")
 
 print(Back.GREEN + " raw columns " + Style.RESET_ALL)
 print(df.columns.tolist())
@@ -33,16 +33,15 @@ df = df[
 print(Back.GREEN + " reordered columns " + Style.RESET_ALL)
 print(df.columns.tolist())
 
-
 # raw features and labels
-X = df.iloc[:, :-1]
-y = df.iloc[:, -1]
+X_raw: pd.DataFrame = df.iloc[:, :-1]
+y_raw: pd.Series = df.iloc[:, -1]
 
 print(Back.GREEN + " X columns " + Style.RESET_ALL)
-print(X.columns.tolist())
+print(X_raw.columns.tolist())
 
 print(Back.GREEN + " y column " + Style.RESET_ALL)
-print(y.name)
+print(y_raw.name)
 
 # transform categorical features with one-hot encoding
 categorical_features = ["Pclass", "Sex", "Embarked"]
@@ -50,11 +49,11 @@ ct = ColumnTransformer(
     transformers=[("encoder", OneHotEncoder(), categorical_features)],
     remainder="passthrough",
 )
-X = np.array(ct.fit_transform(X))
+X = np.array(ct.fit_transform(X_raw))
 
 # Label encoding
 le = LabelEncoder()
-y = le.fit_transform(y)
+y = le.fit_transform(y_raw)
 
 # output the processed features and labels to a csv file
 df_processed = pd.DataFrame(X)
