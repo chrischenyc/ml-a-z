@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from colorama import Back, Style, init
 from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 # initialize colorama
@@ -64,3 +65,18 @@ df_processed["Survived"] = y
 
 # save the processed data to a csv file
 df_processed.to_csv("./data/titanic_processed.csv", index=False)
+
+# split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+
+print(Back.GREEN + " X_train " + Style.RESET_ALL)
+print(X_train.shape)
+
+print(Back.GREEN + " X_test " + Style.RESET_ALL)
+print(X_test.shape)
+
+print(Back.GREEN + " y_train " + Style.RESET_ALL)
+print(y_train.shape)
+
+print(Back.GREEN + " y_test " + Style.RESET_ALL)
+print(y_test.shape)
