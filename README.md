@@ -7,6 +7,7 @@
    - [Installation](#installation)
 3. [Usage](#usage)
 4. [Project Structure](#project-structure)
+5. [Dependencies](#dependencies)
 
 ## Description
 
@@ -55,3 +56,21 @@ To automatically run and monitor changes in Python scripts, use `auto_run.py`. T
 - `.gitignore`: Specifies files and directories to be ignored by Git.
 - `.pre-commit-config.yaml`: Contains configuration for pre-commit hooks.
 - `.flake8`: Configuration file for flake8 linting.
+
+## Dependencies
+
+The project uses the following Python packages:
+
+### Core Dependencies
+- [numpy](https://github.com/numpy/numpy)
+- [pandas](https://github.com/pandas-dev/pandas)
+- [scikit-learn](https://github.com/scikit-learn/scikit-learn)
+- [watchdog](https://github.com/gorakhargosh/watchdog)
+- [colorama](https://github.com/tartley/colorama)
+
+### Development Tools
+- [black](https://github.com/psf/black)
+- [isort](https://github.com/PyCQA/isort)
+- [pre-commit](https://github.com/pre-commit/pre-commit)
+- [flake8](https://github.com/PyCQA/flake8)
+- [flake8-docstrings](https://github.com/PyCQA/flake8-docstrings)
