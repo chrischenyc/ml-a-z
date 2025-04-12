@@ -10,3 +10,7 @@ isort==5.13.2
 pre-commit==3.6.0
 flake8==7.0.0
 flake8-docstrings==1.7.0
+
+# Git commit message tools
+commitizen==3.15.0
+questionary==2.0.1

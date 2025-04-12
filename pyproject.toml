@@ -1,0 +1,47 @@
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.0.1"
+version_files = [
+    "README.md",
+    "pyproject.toml"
+]
+
+[tool.commitizen.customize]
+message_template = "{type}({scope}): {subject}\n\n{body}\n\n{footer}"
+example = "feat(api): add new endpoint\n\nThis commit adds a new endpoint to handle user authentication.\n\nCloses #123"
+schema = "<type>(<scope>): <subject>\n\n<body>\n\n<footer>"
+bump_pattern = "^(break|new|fix|hotfix)"
+bump_map = {"break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH"}
+commit_parser = "^(?P<type>feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\((?P<scope>[^()\\r\\n]*)\\)|\\((?P<scope>[^()\\r\\n]*)\\))?!?:\\s(?P<subject>[^\\r\\n]*)\\r?\\n(?:\\r?\\n(?P<body>.*))?\\r?\\n(?:\\r?\\n(?P<footer>.*))?"
+info_path = "cz_conventional_commits_info.txt"
+info = """
+This is a customized version of the conventional commits format.
+The commit message should be structured as follows:
+
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+
+The type must be one of the following:
+- feat: A new feature
+- fix: A bug fix
+- docs: Documentation only changes
+- style: Changes that do not affect the meaning of the code
+- refactor: A code change that neither fixes a bug nor adds a feature
+- perf: A code change that improves performance
+- test: Adding missing tests or correcting existing tests
+- build: Changes that affect the build system or external dependencies
+- ci: Changes to CI configuration files and scripts
+- chore: Other changes that don't modify src or test files
+- revert: Reverts a previous commit
+
+The scope is optional and can be anything specifying the place of the commit change.
+
+The subject contains a succinct description of the change.
+
+The body should include the motivation for the change and contrast this with previous behavior.
+
+The footer should contain any information about Breaking Changes and is also the place to reference GitHub issues that this commit closes.
+"""
