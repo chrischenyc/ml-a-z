@@ -100,3 +100,8 @@ plt.title("Salary vs Experience (Test set)")
 plt.xlabel("Years of Experience")
 plt.ylabel("Salary")
 plt.savefig("./output/s06_01_simple_linear_regression_test_set.png")
+
+
+print(
+    f"Predicted salary for 22 years of experience: {regressor.predict(np.array([[22]]))[0]:.0f}"
+)
