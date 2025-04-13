@@ -9,6 +9,11 @@
 6. [Commit Message Conventions](#commit-message-conventions)
 7. [Models](#models)
    - [Simple Linear Regression](#simple-linear-regression)
+8. [Fun Facts](#fun-facts)
+   - [The Meaning of 42](#the-meaning-of-42)
+   - [The 8 in Code Formatters](#the-8-in-code-formatters)
+   - [The SciKit in scikit-learn](#the-scikit-in-scikit-learn)
+   - [The Flake in flake8](#the-flake-in-flake8)
 
 ## Description
 
@@ -105,3 +110,23 @@ BTC and COIN price analysis - [src/s06/exec_01_BTC_COIN.py](src/s06/exec_01_BTC_
 ![BTC and COIN Price Analysis](output/s06_exec_01_BTC_COIN_price.png)
 ![BTC and COIN Price Training Set](output/s06_exec_01_BTC_COIN_price_training_set.png)
 ![BTC and COIN Price Test Set](output/s06_exec_01_BTC_COIN_price_test_set.png)
+
+## Fun Facts
+
+### The Meaning of 42
+- The random state value `42` used in splitting training and test sets is a reference to ["The Hitchhiker's Guide to the Galaxy"](https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy) by Douglas Adams, where 42 is the "Answer to the Ultimate Question of Life, the Universe, and Everything". This value is commonly used in machine learning as a default random seed for [reproducibility](https://scikit-learn.org/stable/common_pitfalls.html#randomness). Here's how it's used in our code:
+
+  ```python
+  from sklearn.model_selection import train_test_split
+
+  # Split the dataset into training and test sets
+  X_train, X_test, y_train, y_test = train_test_split(
+      X, y, test_size=0.2, random_state=42
+  )
+  ```
+
+### The SciKit in scikit-learn
+- The name "scikit-learn" comes from "SciPy Toolkit" (SciKit) and its focus on machine learning. It's part of a family of SciKits built on top of [SciPy](https://www.scipy.org/), including [scikit-image](https://scikit-image.org/) for image processing and [scikit-bio](http://scikit-bio.org/) for bioinformatics.
+
+### The Flake in flake8
+- The name "flake8" combines [pyFlakes](https://github.com/PyCQA/pyflakes) (a Python code checker) and [PEP 8](https://peps.python.org/pep-0008/) (Python's style guide), showing its dual purpose of checking both code quality and style.
