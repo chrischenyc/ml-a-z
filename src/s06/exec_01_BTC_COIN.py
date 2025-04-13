@@ -71,7 +71,22 @@ plt.savefig("./output/s06_exec_01_BTC_COIN_price_training_set.png")
 plt.clf()
 plt.scatter(X_test, y_test, color="red")
 plt.plot(X_train, regressor.predict(X_train), color="blue")
+
+# Calculate and display R-squared score
+r2_score = regressor.score(X_test, y_test)
 plt.title("BTC and COIN Price (Test set)")
 plt.xlabel("BTC Price")
 plt.ylabel("COIN Price")
+
+# Add R-squared score in bottom right
+plt.text(
+    0.95,
+    0.05,
+    f"R² = {r2_score:.4f}",
+    transform=plt.gca().transAxes,
+    horizontalalignment="right",
+    verticalalignment="bottom",
+    bbox=dict(facecolor="white", alpha=0.8),
+)
+
 plt.savefig("./output/s06_exec_01_BTC_COIN_price_test_set.png")

@@ -99,6 +99,18 @@ plt.plot(X_train, regressor.predict(X_train), color="blue")
 plt.title("Salary vs Experience (Test set)")
 plt.xlabel("Years of Experience")
 plt.ylabel("Salary")
+
+# Add R-squared score in bottom right
+plt.text(
+    0.95,
+    0.05,
+    f"R² = {regressor.score(X_test, y_test):.4f}",
+    transform=plt.gca().transAxes,
+    horizontalalignment="right",
+    verticalalignment="bottom",
+    bbox=dict(facecolor="white", alpha=0.8),
+)
+
 plt.savefig("./output/s06_01_simple_linear_regression_test_set.png")
 
 
