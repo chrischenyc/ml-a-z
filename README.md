@@ -95,7 +95,13 @@ The commit message format is enforced using [commitizen](https://github.com/comm
 ## Models
 
 ### Simple Linear Regression
-[src/s06/01_simple_linear_regression.py](src/s06/01_simple_linear_regression.py)
+Salary prediction based on years of experience - [src/s06/01_simple_linear_regression.py](src/s06/01_simple_linear_regression.py)
 
 ![Simple Linear Regression Training Set](output/s06_01_simple_linear_regression_training_set.png)
 ![Simple Linear Regression Test Set](output/s06_01_simple_linear_regression_test_set.png)
+
+BTC and COIN price analysis - [src/s06/exec_01_BTC_COIN.py](src/s06/exec_01_BTC_COIN.py)
+
+![BTC and COIN Price Analysis](output/s06_exec_01_BTC_COIN_price.png)
+![BTC and COIN Price Training Set](output/s06_exec_01_BTC_COIN_price_training_set.png)
+![BTC and COIN Price Test Set](output/s06_exec_01_BTC_COIN_price_test_set.png)
