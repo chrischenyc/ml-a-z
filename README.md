@@ -100,16 +100,18 @@ The commit message format is enforced using [commitizen](https://github.com/comm
 ## Models
 
 ### Simple Linear Regression
-Salary prediction based on years of experience - [src/s06/01_simple_linear_regression.py](src/s06/01_simple_linear_regression.py)
+Salary prediction based on years of experience - [src/02_regression/01_simple_linear_regression.py](src/02_regression/01_simple_linear_regression.py)
 
-![Simple Linear Regression Training Set](output/s06_01_simple_linear_regression_training_set.png)
-![Simple Linear Regression Test Set](output/s06_01_simple_linear_regression_test_set.png)
+![Simple Linear Regression Training Set](output/s02_01_simple_linear_regression_training_set.png)
+![Simple Linear Regression Test Set](output/s02_01_simple_linear_regression_test_set.png)
 
-BTC and COIN price analysis - [src/s06/exec_01_BTC_COIN.py](src/s06/exec_01_BTC_COIN.py)
+Statistical significance analysis using p-values - [src/02_regression/02_p_values.py](src/02_regression/02_p_values.py)
 
-![BTC and COIN Price Analysis](output/s06_exec_01_BTC_COIN_price.png)
-![BTC and COIN Price Training Set](output/s06_exec_01_BTC_COIN_price_training_set.png)
-![BTC and COIN Price Test Set](output/s06_exec_01_BTC_COIN_price_test_set.png)
+BTC and COIN price analysis - [src/02_regression/exec_01_BTC_COIN.py](src/02_regression/exec_01_BTC_COIN.py)
+
+![BTC and COIN Price Analysis](output/s02_exec_01_BTC_COIN_price.png)
+![BTC and COIN Price Training Set](output/s02_exec_01_BTC_COIN_price_training_set.png)
+![BTC and COIN Price Test Set](output/s02_exec_01_BTC_COIN_price_test_set.png)
 
 ## Fun Facts
 

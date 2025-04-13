@@ -1,3 +1,5 @@
+# 01.exercise.2
+
 import numpy as np
 import pandas as pd
 from colorama import Back, Style, init

@@ -1,4 +1,4 @@
-# 3.25 - feature scaling
+# 01.07 - feature scaling
 
 import numpy as np
 import pandas as pd

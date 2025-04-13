@@ -1,3 +1,5 @@
+# 02.exec.1 - BTC and COIN price analysis
+
 # use simple linear regression to predict the price of COIN share price based on BTC price
 
 import matplotlib.dates as mdates
@@ -43,7 +45,7 @@ ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper left")
 plt.xticks(rotation=45)
 
 plt.tight_layout()  # Adjust layout to prevent label cutoff
-plt.savefig("./output/s06_exec_01_BTC_COIN_price.png")
+plt.savefig("./output/s02_exec_01_BTC_COIN_price.png")
 
 
 # training data preprocessing
@@ -66,7 +68,7 @@ plt.plot(X_train, regressor.predict(X_train), color="blue")
 plt.title("BTC and COIN Price (Training set)")
 plt.xlabel("BTC Price")
 plt.ylabel("COIN Price")
-plt.savefig("./output/s06_exec_01_BTC_COIN_price_training_set.png")
+plt.savefig("./output/s02_exec_01_BTC_COIN_price_training_set.png")
 
 # plotting the test set results
 plt.clf()
@@ -90,7 +92,7 @@ plt.text(
     bbox=dict(facecolor="white", alpha=0.8),
 )
 
-plt.savefig("./output/s06_exec_01_BTC_COIN_price_test_set.png")
+plt.savefig("./output/s02_exec_01_BTC_COIN_price_test_set.png")
 
 
 # predict the price of COIN share price based on BTC price

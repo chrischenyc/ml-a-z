@@ -1,3 +1,5 @@
+# 02.01 - simple linear regression
+
 import numpy as np
 import pandas as pd
 from colorama import Back, Style, init
@@ -90,7 +92,7 @@ plt.plot(X_train, regressor.predict(X_train), color="blue")
 plt.title("Salary vs Experience (Training set)")
 plt.xlabel("Years of Experience")
 plt.ylabel("Salary")
-plt.savefig("./output/s06_01_simple_linear_regression_training_set.png")
+plt.savefig("./output/s02_01_simple_linear_regression_training_set.png")
 
 # visualizing the test set results
 plt.clf()
@@ -111,7 +113,7 @@ plt.text(
     bbox=dict(facecolor="white", alpha=0.8),
 )
 
-plt.savefig("./output/s06_01_simple_linear_regression_test_set.png")
+plt.savefig("./output/s02_01_simple_linear_regression_test_set.png")
 
 
 print(

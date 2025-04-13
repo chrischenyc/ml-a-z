@@ -1,4 +1,4 @@
-# 3.22 - split training and test sets
+# 01.06 - split training and test sets
 
 # pandas is used for data manipulation and analysis
 # numpy is used for numerical operations

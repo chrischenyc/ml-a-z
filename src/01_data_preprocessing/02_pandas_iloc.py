@@ -1,4 +1,4 @@
-# 3.11 - data preprocessing
+# 01.02 - pandas dataframe iloc
 
 # pandas is used for data manipulation and analysis
 import pandas as pd

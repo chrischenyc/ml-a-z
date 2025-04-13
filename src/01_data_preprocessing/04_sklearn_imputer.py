@@ -1,4 +1,4 @@
-# 3.17 - missing data
+# 01.04 - sklearn imputer
 
 # pandas is used for data manipulation and analysis
 # numpy is used for numerical operations

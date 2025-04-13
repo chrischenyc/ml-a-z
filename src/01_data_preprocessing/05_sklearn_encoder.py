@@ -1,4 +1,4 @@
-# 3.19 - transform categorical columns
+# 01.05 - sklearn encoder
 
 # pandas is used for data manipulation and analysis
 # numpy is used for numerical operations
