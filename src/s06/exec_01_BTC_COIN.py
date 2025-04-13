@@ -1,6 +1,7 @@
 # use simple linear regression to predict the price of COIN share price based on BTC price
 
 import matplotlib.dates as mdates
+import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LinearRegression
@@ -90,3 +91,12 @@ plt.text(
 )
 
 plt.savefig("./output/s06_exec_01_BTC_COIN_price_test_set.png")
+
+
+# predict the price of COIN share price based on BTC price
+btc_price = 83404.84  # price of BTC on 2025-04-12
+predicted_coin_price = regressor.predict(np.array([[btc_price]]))
+print(
+    f"COIN price predicted based on BTC price {btc_price} "
+    f"is {predicted_coin_price[0][0]:.2f}"
+)
