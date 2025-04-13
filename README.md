@@ -12,7 +12,7 @@
 
 ## Description
 
-This repository contains coding exercises from the Udemy course [Machine Learning A-Z: AI, Python & R](https://www.udemy.com/course/machinelearning). The project also leverages Cursor for code generation and project structuring.
+This repository contains coding exercises from the Udemy course [Machine Learning A-Z: AI, Python & R](https://www.udemy.com/course/machinelearning). The project also leverages [Cursor](https://cursor.sh/) for code generation and project structuring.
 
 ## Setup
 
@@ -62,13 +62,26 @@ To automatically run and monitor changes in Python scripts, use `auto_run.py`. T
 ## Dependencies
 
 ### Core Dependencies
-- Python 3.x
-- pip
+- [Python 3.x](https://www.python.org/)
+- [pip](https://pip.pypa.io/en/stable/)
+
+### Machine Learning & Data Science
+- [NumPy](https://github.com/numpy/numpy) - Numerical computing
+- [pandas](https://github.com/pandas-dev/pandas) - Data manipulation and analysis
+- [scikit-learn](https://github.com/scikit-learn/scikit-learn) - Machine learning algorithms
+- [matplotlib](https://github.com/matplotlib/matplotlib) - Data visualization
 
 ### Development Tools
-- pre-commit
-- flake8
-- commitizen
+- [pre-commit](https://github.com/pre-commit/pre-commit) - Git hook management
+- [flake8](https://github.com/PyCQA/flake8) - Python code linting
+- [black](https://github.com/psf/black) - Python code formatting
+- [isort](https://github.com/PyCQA/isort) - Import sorting
+- [watchdog](https://github.com/gorakhargosh/watchdog) - File system events monitoring
+- [colorama](https://github.com/tartley/colorama) - Cross-platform colored terminal text
+
+### Git Tools
+- [commitizen](https://github.com/commitizen-tools/commitizen) - Commit message conventions
+- [questionary](https://github.com/tmbo/questionary) - Interactive command line prompts
 
 ## Commit Message Conventions
 
