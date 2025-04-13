@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 from colorama import Back, Style, init
+from matplotlib import pyplot as plt
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 
 # initialize colorama
 init()
@@ -34,30 +34,17 @@ print(X)
 # split the data into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
-X_test_raw = X_test.copy()
-
 print(Back.BLUE + " split into training and test sets - X_train " + Style.RESET_ALL)
-print(X_train)
+print(X_train.shape)
 
 print(Back.BLUE + " split into training and test sets - X_test " + Style.RESET_ALL)
-print(X_test)
+print(X_test.shape)
 
 print(Back.BLUE + " split into training and test sets - y_train " + Style.RESET_ALL)
-print(y_train)
+print(y_train.shape)
 
 print(Back.BLUE + " split into training and test sets - y_test " + Style.RESET_ALL)
-print(y_test)
-
-# feature scaling
-sc = StandardScaler()
-X_train[:, :] = sc.fit_transform(X_train[:, :])
-X_test[:, :] = sc.transform(X_test[:, :])
-
-print(Back.BLUE + " feature scaled - X_train " + Style.RESET_ALL)
-print(X_train)
-
-print(Back.BLUE + " feature scaled - X_test " + Style.RESET_ALL)
-print(X_test)
+print(y_test.shape)
 
 # preprocessed data
 print(Back.BLUE + " preprocessed data - X_train, y_train " + Style.RESET_ALL)
@@ -83,7 +70,7 @@ print(Back.GREEN + " predicted results " + Style.RESET_ALL)
 print(
     pd.DataFrame(
         {
-            "Years of Experience": X_test_raw[:, 0],
+            "Years of Experience": X_test[:, 0],
             "Actual": y_test,
             "Predicted": y_pred,
             "Difference %": (y_test - y_pred) / y_test * 100,
@@ -95,3 +82,21 @@ print(
 # score: model's accuracy, meaning how much of the variance in the dependent variable
 # is explained by the independent variable
 print(f"Model score (R²): {regressor.score(X_test, y_test):.4f}")
+
+
+# visualizing the training set results
+plt.scatter(X_train, y_train, color="red")
+plt.plot(X_train, regressor.predict(X_train), color="blue")
+plt.title("Salary vs Experience (Training set)")
+plt.xlabel("Years of Experience")
+plt.ylabel("Salary")
+plt.savefig("./output/s06_01_simple_linear_regression_training_set.png")
+
+# visualizing the test set results
+plt.clf()
+plt.scatter(X_test, y_test, color="red")
+plt.plot(X_train, regressor.predict(X_train), color="blue")
+plt.title("Salary vs Experience (Test set)")
+plt.xlabel("Years of Experience")
+plt.ylabel("Salary")
+plt.savefig("./output/s06_01_simple_linear_regression_test_set.png")

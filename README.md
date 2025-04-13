@@ -3,16 +3,12 @@
 ## Table of Contents
 1. [Description](#description)
 2. [Setup](#setup)
-   - [Prerequisites](#prerequisites)
-   - [Installation](#installation)
 3. [Usage](#usage)
 4. [Project Structure](#project-structure)
-5. [Commit Message Conventions](#commit-message-conventions)
-   - [Types](#types)
-   - [Examples](#examples)
-6. [Dependencies](#dependencies)
-   - [Core Dependencies](#core-dependencies)
-   - [Development Tools](#development-tools)
+5. [Dependencies](#dependencies)
+6. [Commit Message Conventions](#commit-message-conventions)
+7. [Models](#models)
+   - [Simple Linear Regression](#simple-linear-regression)
 
 ## Description
 
@@ -63,6 +59,17 @@ To automatically run and monitor changes in Python scripts, use `auto_run.py`. T
 - `.flake8`: Configuration file for flake8 linting.
 - `pyproject.toml`: Configuration for commit message conventions.
 
+## Dependencies
+
+### Core Dependencies
+- Python 3.x
+- pip
+
+### Development Tools
+- pre-commit
+- flake8
+- commitizen
+
 ## Commit Message Conventions
 
 This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification. For detailed information about commit types and examples, please refer to:
@@ -71,3 +78,11 @@ This project follows the [Conventional Commits](https://www.conventionalcommits.
 - [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/)
 
 The commit message format is enforced using [commitizen](https://github.com/commitizen-tools/commitizen).
+
+## Models
+
+### Simple Linear Regression
+[src/s06/01_simple_linear_regression.py](src/s06/01_simple_linear_regression.py)
+
+![Simple Linear Regression Training Set](output/s06_01_simple_linear_regression_training_set.png)
+![Simple Linear Regression Test Set](output/s06_01_simple_linear_regression_test_set.png)
