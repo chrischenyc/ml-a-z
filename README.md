@@ -9,6 +9,7 @@
 6. [Commit Message Conventions](#commit-message-conventions)
 7. [Models](#models)
    - [Simple Linear Regression](#simple-linear-regression)
+   - [Multiple Linear Regression](#multiple-linear-regression)
 8. [Fun Facts](#fun-facts)
    - [The Meaning of 42](#the-meaning-of-42)
    - [The 8 in Code Formatters](#the-8-in-code-formatters)
@@ -105,13 +106,20 @@ Salary prediction based on years of experience - [src/02_regression/01_simple_li
 ![Simple Linear Regression Training Set](output/s02_01_simple_linear_regression_training_set.png)
 ![Simple Linear Regression Test Set](output/s02_01_simple_linear_regression_test_set.png)
 
-Statistical significance analysis using p-values - [src/02_regression/02_p_values.py](src/02_regression/02_p_values.py)
-
 BTC and COIN price analysis - [src/02_regression/exec_01_BTC_COIN.py](src/02_regression/exec_01_BTC_COIN.py)
 
 ![BTC and COIN Price Analysis](output/s02_exec_01_BTC_COIN_price.png)
 ![BTC and COIN Price Training Set](output/s02_exec_01_BTC_COIN_price_training_set.png)
 ![BTC and COIN Price Test Set](output/s02_exec_01_BTC_COIN_price_test_set.png)
+
+### Multiple Linear Regression
+Startup profit prediction based on R&D spend, administration, and marketing spend - [src/02_regression/02_multiple_linear_regression.py](src/02_regression/02_multiple_linear_regression.py)
+
+![Multiple Linear Regression: R&D Spend vs Administration](output/s02_02_multiple_linear_regression_RnD_Administration.png)
+![Multiple Linear Regression: R&D Spend vs Marketing Spend](output/s02_02_multiple_linear_regression_RnD_Marketing.png)
+![Multiple Linear Regression: Administration vs Marketing Spend](output/s02_02_multiple_linear_regression_Administration_Marketing.png)
+![Multiple Linear Regression: Actual vs Predicted](output/s02_02_actual_vs_predicted.png)
+
 
 ## Fun Facts
 
@@ -127,8 +135,8 @@ BTC and COIN price analysis - [src/02_regression/exec_01_BTC_COIN.py](src/02_reg
   )
   ```
 
-### The SciKit in scikit-learn
+### scikit-learn naming
 - The name "scikit-learn" comes from "SciPy Toolkit" (SciKit) and its focus on machine learning. It's part of a family of SciKits built on top of [SciPy](https://www.scipy.org/), including [scikit-image](https://scikit-image.org/) for image processing and [scikit-bio](http://scikit-bio.org/) for bioinformatics.
 
-### The Flake in flake8
+### flake8 naming
 - The name "flake8" combines [pyFlakes](https://github.com/PyCQA/pyflakes) (a Python code checker) and [PEP 8](https://peps.python.org/pep-0008/) (Python's style guide), showing its dual purpose of checking both code quality and style.
